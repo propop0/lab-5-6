@@ -42,11 +42,12 @@
   padding: 8px 10px;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.7s ease, box-shadow 0.7s ease;
+  transition: background 0.7s ease, box-shadow 0.7s ease, transform 0.7s ease;
 }
 
 .delete-btn:hover {
   background: rgba(220, 38, 38, 0.4);
   box-shadow: 2px 4px 12px rgba(220, 38, 93, 0.393);
-  color:rgb(255, 255, 255)
+  color:rgb(255, 255, 255);
+  transform: translateY(-3px);
 }

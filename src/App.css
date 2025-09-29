@@ -17,5 +17,10 @@
   padding: 24px;
   box-shadow: 0 10px 30px rgba(20, 30, 60, 0.08);
   border-radius: 25px;
+  transition: box-shadow 0.3s ease, transform 0.7s ease;
 }
 
+.app-container:hover {
+  box-shadow: 0 20px 40px rgba(20, 30, 60, 0.51);
+  transform: translateY(-5px);
+}
