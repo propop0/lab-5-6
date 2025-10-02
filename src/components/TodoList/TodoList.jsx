@@ -9,7 +9,7 @@ export default function TodoList() {
 
   return (
     <section className="todo-list-root">
-      <h2 className="title">My Todo List</h2>
+      {/* <h2 className="title">Todo list</h2> */}
 
       <div className="add-wrap">
         <AddTodoForm onAdd={(text) => addTodo(text)} />

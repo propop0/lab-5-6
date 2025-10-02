@@ -3,14 +3,14 @@
   max-width: 760px;
   margin: 40px auto;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.46);
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.132);
+  border-radius: 27px;
   border: 1px solid rgba(255,255,255,0.4);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   box-shadow: 0 10px 30px rgba(20, 30, 60, 0.08);
   background-image: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.35));
-  transition: box-shadow 0.3s ease, transform 0.7s ease;
+  transition: box-shadow 0.3s ease, transform 1.0s ease;
 }
 
 .todo-list-root:hover {
@@ -48,19 +48,19 @@
     border: #0875d400;
 }
 
-.title {
+/* .title {
   margin: 0 0 18px 0;
   text-align: center;
-  color: #386641c2;
+  color: #383866c2;
   font-size: 20px;
   font-weight: 600;
-}
+} */
 
 .add-wrap {
   margin-bottom: 40px;
   padding: 10px;
   background-color: rgba(191, 227, 255, 0.133);
-  border-radius: 8px;
+  border-radius: 15px;
   transition: transform 0.7s ease, box-shadow 0.5s ease;
   box-shadow: 0px 4px 27px rgba(151, 147, 223, 0.392);
 }
