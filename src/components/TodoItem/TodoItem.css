@@ -1,5 +1,5 @@
 .todo-item {
-  background: rgba(255, 255, 255, 0.15); 
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 15px;
   padding: 12px 16px;
   margin-bottom: 12px;
@@ -49,5 +49,58 @@
   background: rgba(220, 38, 38, 0.4);
   box-shadow: 2px 4px 12px rgba(220, 38, 93, 0.393);
   color:rgb(255, 255, 255);
+  transform: translateY(-3px);
+}
+
+.edit-input {
+  background: transparent;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 15px;
+  color: #1d2c51e3;
+  flex: 1;
+  outline: none;
+  margin-right: 10px;
+}
+
+.edit-input:focus {
+  border: 1px solid rgba(59, 162, 246, 0.111);
+      box-shadow: 0px 5px 10px rgba(151, 147, 223, 0.496) !important;
+}
+
+.cancel-btn{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.edit-btn, .save-btn, .cancel-btn {
+  background: transparent;
+  border: 1px solid rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.7s ease, box-shadow 0.7s ease, transform 0.7s ease;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.edit-btn:hover, .save-btn:hover {
+  background: rgba(59, 130, 246, 0.4);
+  box-shadow: 2px 4px 12px rgba(59, 130, 246, 0.393);
+  color: rgb(255, 255, 255);
+  transform: translateY(-3px);
+}
+
+.cancel-btn {
+  border-color: rgba(107, 114, 128, 0.12);
+  color: #6b7280;
+}
+
+.cancel-btn:hover {
+  background: rgba(107, 114, 128, 0.4);
+  box-shadow: 2px 4px 12px rgba(107, 114, 128, 0.393);
+  color: rgb(255, 255, 255);
   transform: translateY(-3px);
 }
