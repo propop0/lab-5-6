@@ -139,13 +139,16 @@ export default function useTodos() {
     const item = todosRef.current.find((t) => t.id === id);
     if (!item) return;
 
+    // Always update the local state first
+    setTodos((prev) => prev.map((t) => (t.id === id ? { ...t, text: newTitle } : t)));
+
+    // If it's a local todo, we're done
     if (item.isLocal) {
-      setTodos((prev) => prev.map((t) => (t.id === id ? { ...t, text: newTitle } : t)));
       return;
     }
 
+    // For API todos, make the API call
     const prev = todosRef.current;
-    setTodos((prevList) => prevList.map((t) => (t.id === id ? { ...t, text: newTitle } : t)));
     setIsLoading(true);
     try {
       await axios.put(`${BASE_URL}/todos/${id}`, { todo: newTitle });

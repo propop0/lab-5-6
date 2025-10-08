@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./TodoItem.css";
 
 export default function TodoItem({ id, text, completed = false, onDelete, onToggle, onEdit }) {
   const [isCompleted, setIsCompleted] = useState(!!completed);
   const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(text);
+  const cancelButtonRef = useRef(null);
+  const saveButtonRef = useRef(null);
 
   useEffect(() => {
     setIsCompleted(!!completed);
@@ -29,23 +31,39 @@ export default function TodoItem({ id, text, completed = false, onDelete, onTogg
 
   const handleSave = () => {
     const trimmedText = editText.trim();
-    if (trimmedText && trimmedText !== text) {
+    if (trimmedText) {
       if (onEdit) onEdit(id, trimmedText);
     }
+    // Force exit edit mode immediately
     setIsEditing(false);
   };
 
-  const handleCancel = () => {
+  const handleCancel = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     setEditText(text);
     setIsEditing(false);
   };
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
+      e.preventDefault();
       handleSave();
     } else if (e.key === 'Escape') {
+      e.preventDefault();
       handleCancel();
     }
+  };
+
+  const handleInputBlur = (e) => {
+    // Only handle blur if we're still in editing mode
+    if (!isEditing) return;
+    
+    // Don't save if clicking Cancel or Save buttons
+    if (e.relatedTarget === cancelButtonRef.current || e.relatedTarget === saveButtonRef.current) {
+      return;
+    }
+    handleSave();
   };
 
   return (
@@ -59,7 +77,7 @@ export default function TodoItem({ id, text, completed = false, onDelete, onTogg
             value={editText}
             onChange={(e) => setEditText(e.target.value)}
             onKeyDown={handleKeyPress}
-            onBlur={handleSave}
+            onBlur={handleInputBlur}
             autoFocus
           />
         ) : (
@@ -69,8 +87,20 @@ export default function TodoItem({ id, text, completed = false, onDelete, onTogg
       <div className="todo-right">
         {isEditing ? (
           <>
-            <button className="save-btn" onClick={handleSave}>Save</button>
-            <button className="cancel-btn" onClick={handleCancel}>Cancel</button>
+            <button 
+              ref={saveButtonRef}
+              className="save-btn" 
+              onClick={handleSave}
+            >
+              Save
+            </button>
+            <button
+              ref={cancelButtonRef}
+              className="cancel-btn"
+              onClick={handleCancel}
+            >
+              Cancel
+            </button>
           </>
         ) : (
           <>

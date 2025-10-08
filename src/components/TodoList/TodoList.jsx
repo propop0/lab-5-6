@@ -26,47 +26,58 @@ export default function TodoList() {
   } = useTodos();
 
   return (
-    <section className="todo-list-root">
-      <div className="add-wrap">
-        <AddTodoForm onAdd={(text) => addTodo(text)} />
-      </div>
+    <>
+      {/* Fixed Loading Overlay */}
+      {isLoading && (
+        <div className="loading-overlay">
+          <div className="loading-spinner">
+            <div className="spinner"></div>
+            <span>Loading...</span>
+          </div>
+        </div>
+      )}
 
-      <SearchBar
-        searchTerm={searchTerm}
-        onSearchChange={setSearchTerm}
-      />
+      <section className="todo-list-root">
+        <div className="add-wrap">
+          <AddTodoForm onAdd={(text) => addTodo(text)} />
+        </div>
 
-      {isLoading && <div className="status">Loading...</div>}
-      {error && <div className="status error">Error: {error.message || String(error)}</div>}
+        <SearchBar
+          searchTerm={searchTerm}
+          onSearchChange={setSearchTerm}
+        />
 
-      <div className="items">
-        {todos.length === 0 && !isLoading ? (
-          <p className="empty">
-            {searchTerm ? `No todos found matching "${searchTerm}"` : "No todos — add your first task!"}
-          </p>
-        ) : (
-          todos.map((t) => (
-            <TodoItem
-              key={t.id}
-              id={t.id}
-              text={t.text}
-              completed={t.completed}
-              onDelete={deleteTodo}
-              onToggle={toggleTodo}
-              onEdit={editTodoTitle}
-            />
-          ))
-        )}
-      </div>
+        {error && <div className="status error">Error: {error.message || String(error)}</div>}
 
-      <PaginationControls
-        currentPage={currentPage}
-        totalTodos={totalTodos}
-        limitPerPage={limitPerPage}
-        onPrevPage={goToPrevPage}
-        onNextPage={goToNextPage}
-        onSetLimit={setLimit}
-      />
-    </section>
+        <div className="items">
+          {todos.length === 0 && !isLoading ? (
+            <p className="empty">
+              {searchTerm ? `No todos found matching "${searchTerm}"` : "No todos — add your first task!"}
+            </p>
+          ) : (
+            todos.map((t) => (
+              <TodoItem
+                key={t.id}
+                id={t.id}
+                text={t.text}
+                completed={t.completed}
+                onDelete={deleteTodo}
+                onToggle={toggleTodo}
+                onEdit={editTodoTitle}
+              />
+            ))
+          )}
+        </div>
+
+        <PaginationControls
+          currentPage={currentPage}
+          totalTodos={totalTodos}
+          limitPerPage={limitPerPage}
+          onPrevPage={goToPrevPage}
+          onNextPage={goToNextPage}
+          onSetLimit={setLimit}
+        />
+      </section>
+    </>
   );
 }
