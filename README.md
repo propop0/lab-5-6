@@ -15,15 +15,6 @@ classDiagram
     state: todos[], isLoading, error
     state: currentPage, limitPerPage, totalTodos
     state: searchTerm
-    local flag: isLocal (for optimistic updates)
-    +addTodo(text)
-    +toggleTodo(id)
-    +deleteTodo(id)
-    +editTodoTitle(id, newTitle)
-    +setSearchTerm(term)
-    +goToNextPage()
-    +goToPrevPage()
-    +setLimit(limit)
   }
 
   class AddTodoForm {
