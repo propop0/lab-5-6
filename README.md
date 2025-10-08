@@ -33,7 +33,9 @@ classDiagram
   }
 
   class PaginationControls {
-    props: currentPage, totalTodos, limitPerPage, onPrevPage, onNextPage, onSetLimit
+    props: currentPage, totalTodos, 
+    limitPerPage, onPrevPage, 
+    onNextPage, onSetLimit
   }
 
   App --> TodoList
