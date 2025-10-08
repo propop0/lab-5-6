@@ -5,8 +5,6 @@
   margin-top: 1rem;
   padding: 16px 20px;
   background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px) saturate(180%);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -15,7 +13,7 @@
 
 .pagination-controls:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 17px rgba(179, 175, 248, 0.39);
 }
 
 .pagination-info {
@@ -23,12 +21,12 @@
   flex-direction: column;
   gap: 0.25rem;
   font-size: 0.9rem;
-  color: rgba(29, 44, 81, 0.8);
+  color: #14326d66;
 }
 
 .page-info {
   font-weight: 600;
-  color: rgba(29, 44, 81, 0.9);
+  color: #14326d92;
 }
 
 .pagination-buttons {
@@ -38,23 +36,24 @@
 }
 
 .pagination-btn {
-  padding: 8px 12px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  background: rgba(255, 255, 255, 0.8);
-  color: rgba(29, 44, 81, 0.8);
+  background: rgba(255, 255, 255, 0.455);
+  border: 1px solid rgb(255, 255, 255);
+  color: #14326d66;
+  padding: 8px 10px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  font-weight: 600;
+  transition: background 0.7s ease, box-shadow 0.7s ease, transform 0.7s ease;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 .pagination-btn:hover:not(:disabled) {
-  background: rgba(59, 130, 246, 0.1);
-  border-color: rgba(59, 130, 246, 0.3);
-  color: rgba(59, 130, 246, 0.9);
-  transform: translateY(-1px);
+  background: rgba(28, 164, 188, 0.26);
+  border-color: rgba(48, 125, 90, 0.137);
+  box-shadow: 2px 4px 12px rgba(68, 118, 199, 0.393);
+  color: rgb(255, 255, 255);
+  transform: translateY(-3px);
 }
 
 .pagination-btn:disabled {
@@ -65,14 +64,22 @@
 
 .limit-select {
   padding: 8px 10px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.455);
+  font-size: 13px;
   cursor: pointer;
-  color: rgba(29, 44, 81, 0.8);
-  backdrop-filter: blur(10px);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  color: #14326d66;
+  font-weight: 600;
+  transition: border-color 0.7s ease, box-shadow 0.7s ease, transform 0.7s ease;
+}
+
+.limit-select:hover {
+  background: rgba(28, 164, 188, 0.26);
+  color: #f8f8f8;
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.04);
+  transform: translateY(-2px);
 }
 
 .limit-select:focus {

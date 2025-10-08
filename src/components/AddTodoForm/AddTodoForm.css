@@ -5,58 +5,42 @@
 }
 
 .add-todo-input {
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.455);
+  border: 1px solid rgb(255, 255, 255);
+  transition: transform 0.7s ease, box-shadow 0.5s ease;
+  color: #122656bf;
   flex:1;
-  padding: 10px 12px;
+  padding: 10px 10px;
   border-radius: 10px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
   font-size: 14px;
   outline: none;
-}
-
-.add-todo-input:focus {
-  border-color: rgba(59,130,246,0.6);
-  box-shadow: 0 0 0 4px rgba(59,130,246,0.06);
-}
-
-.add-todo-btn {
-  padding: 10px 14px;
-  border-radius: 8px;
-  border: none;
-  background: linear-gradient(90deg,#6366f1,#8b5cf6);
-  color: #fff;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.add-todo-btn {
-    background: linear-gradient(120deg,#63bdf163,#925cf689);
-    color: #14326da5;
-    cursor: pointer;
-    font-weight: 600;
-    transition: transform 0.7s ease, box-shadow 0.5s ease;
-    margin-right: 10px;
-}
-
-.add-todo-btn:hover {
-    background: linear-gradient(120deg,#63bdf191,#925cf6a1);
-    box-shadow: 0px 4px 7px rgba(151, 147, 223, 0.692);
-    transform: translateY(-2px);
-    color: #0875d4d6;
-}
-
-.add-todo-input{
-    font-size: 15px;
-    background-color: #af93e82b;
-    border: 0.5px solid rgba(255, 255, 255, 0.08);
-    margin-right: 20px;
-    transition: transform 0.7s ease, box-shadow 0.5s ease;
-    color: #122656bf;
 }
 
 .add-todo-input:focus {
     box-shadow: 0px 3px 7px rgba(151, 147, 223, 0.692);
     border: 1px solid #107c7c1f;
 }
+
+.add-todo-btn {
+    background: rgba(255, 255, 255, 0.455);
+    border: 1px solid rgb(255, 255, 255);
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #14326d66;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.7s ease, box-shadow 0.5s ease;
+}
+
+.add-todo-btn:hover {
+    background: linear-gradient(120deg,#63bdf135,#925cf64d);
+    box-shadow: 0px 4px 7px rgba(151, 147, 223, 0.692);
+    transform: translateY(-2px);
+    color: #ffffff;
+    border: 1px solid rgba(68, 66, 135, 0.129);
+}
+
 
 /* .title {
   margin: 0 0 18px 0;
@@ -67,15 +51,16 @@
 } */
 
 .add-wrap {
-  margin-bottom: 40px;
-  padding: 10px;
-  background-color: rgba(191, 227, 255, 0.133);
+  margin-bottom: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.893);
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.208);
   border-radius: 15px;
   transition: transform 0.7s ease, box-shadow 0.5s ease;
-  box-shadow: 0px 4px 27px rgba(151, 147, 223, 0.392);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .add-wrap:hover {
-    box-shadow: 0px 8px 17px rgba(151, 147, 223, 0.692);
+    box-shadow: 0px 8px 17px rgba(151, 147, 223, 0.393);
       transform: translateY(-5px);
 }

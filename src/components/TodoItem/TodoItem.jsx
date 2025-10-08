@@ -34,7 +34,6 @@ export default function TodoItem({ id, text, completed = false, onDelete, onTogg
     if (trimmedText) {
       if (onEdit) onEdit(id, trimmedText);
     }
-    // Force exit edit mode immediately
     setIsEditing(false);
   };
 
@@ -56,10 +55,7 @@ export default function TodoItem({ id, text, completed = false, onDelete, onTogg
   };
 
   const handleInputBlur = (e) => {
-    // Only handle blur if we're still in editing mode
     if (!isEditing) return;
-    
-    // Don't save if clicking Cancel or Save buttons
     if (e.relatedTarget === cancelButtonRef.current || e.relatedTarget === saveButtonRef.current) {
       return;
     }
@@ -87,9 +83,9 @@ export default function TodoItem({ id, text, completed = false, onDelete, onTogg
       <div className="todo-right">
         {isEditing ? (
           <>
-            <button 
+            <button
               ref={saveButtonRef}
-              className="save-btn" 
+              className="save-btn"
               onClick={handleSave}
             >
               Save
